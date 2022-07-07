@@ -1,0 +1,53 @@
+﻿<Window x:Class="Grafika5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafika5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1100">
+    <Grid Background="LightSlateGray" Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Margin="5" Background="Gray">
+            <StackPanel>
+                <Button Margin="10 5 10 5" Click="Load_image">Wczytaj obrazek</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Rozciagnij_histogram">Rozciągnij histogram</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Odcienie_szarosci2">Szary obrazek</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Wyrownaj_histogram">Wyrównaj histogram</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Binaryzacja">Binaryzacja przycisk</Button>
+                <TextBox Name="prog_txtbox" Margin="5" >0</TextBox>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Binaryzacja_procent_czarnego">Binaryzacja procent czarnego</Button>
+                <TextBox Name="procent_czarnego_txtbox" Margin="5" >0</TextBox>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Binaryzacja_iteracja">Binaryzacja iteracyjna</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Load_original">Wczytaj oryginał</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Save_original">Zapisz</Button>
+                <Separator Margin="5"></Separator>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Column="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Name="Image_placeholder" Margin="5" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+            <Border Grid.Row="1" BorderThickness="2" BorderBrush="Black" Margin="0" Background="Gray">
+                <DockPanel>
+                    <Canvas Width="256" Height="128" Background="White" HorizontalAlignment="Left" Margin="5" Name="Histogram"></Canvas>
+                    <Canvas Width="256" Height="128" Background="White" HorizontalAlignment="Left" Margin="5" Name="Histogram2"></Canvas>
+                    <Canvas Width="256" Height="128" Background="White" HorizontalAlignment="Left" Margin="5" Name="Histogram3"></Canvas>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
